@@ -17,22 +17,17 @@ public class EmployeeDao {
 	@Autowired
 	HibernateTemplate hiberneteTemplate;
 	
-	
-	//add employee
 	@Transactional
 	public void addEmployee(Employee emp)
 	{
 		hiberneteTemplate.save(emp);
 	}
 	
-	
-	//get all employee
 	public List<Employee> getAllEmp()
 	{
 		return hiberneteTemplate.loadAll(Employee.class);
 	}
 	
-	//get employee by id
 	@Transactional
 	public Employee getEmpById(Long id)
 	{
@@ -42,17 +37,12 @@ public class EmployeeDao {
 		return emp;
 	}
 	
-	
-	//update employee
-	
 	@Transactional
 	public void updateEmp(Employee emp)
 	{
 		hiberneteTemplate.update(emp);
 	}
 	
-	
-	//delete employee
 	@Transactional
 	public void deleteEmp(Long id)
 	{

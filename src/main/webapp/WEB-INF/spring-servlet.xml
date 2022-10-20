@@ -51,7 +51,6 @@
 
 	</bean>
 
-
 	<bean
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
 		name="factory">
@@ -88,8 +87,4 @@
 		name="transactionManager">
 		<property name="sessionFactory" ref="factory"></property>
 	</bean>
-
-
-
-
 </beans>

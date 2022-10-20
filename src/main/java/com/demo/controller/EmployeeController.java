@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.demo.model.Employee;
 import com.demo.service.EmployeeServices;
@@ -18,8 +17,7 @@ public class EmployeeController {
 	
 	@Autowired
 	EmployeeServices employeeServices;
-	
-	//lode add employee form
+
 	@GetMapping("addEmployee")
 	public String  addEmp()
 	{
@@ -28,8 +26,6 @@ public class EmployeeController {
 		
 	}
 	
-	
-	//save employee form
 	@PostMapping("/insertEmployee")
 	public String insertEmployee(@ModelAttribute("insertEmployee") Employee emp)
 	{
@@ -38,9 +34,6 @@ public class EmployeeController {
 		return "redirect:/employeeReport";
 	}
 	
-	
-	
-	//lode employee data
 	@GetMapping("employeeReport")
 	public String lodeEmployee(Model m)
 	{
@@ -50,9 +43,6 @@ public class EmployeeController {
 		return "EmployeeReport";
 	}
 	
-	
-	//lode edit form
-	 
 	@GetMapping("/editEmployee/{id}")
 	public String lodeEditForm(@PathVariable(value="id") Long id, Model m)
 	{
@@ -88,10 +78,4 @@ public class EmployeeController {
 		
 		return "redirect:/employeeReport";
 	}
-	
-	
-	
-	
-	
-	
 }
